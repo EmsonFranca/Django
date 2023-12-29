@@ -11,8 +11,8 @@ def home(request):
     # Vai mostrar  a pagina "base_template/global/idex.html" 
     # return render(request, 'global/index.html', status=404)
 
-def sobre(request):
-    return render(request, 'temp/temp.html')
+def contato(request):
+    return render(request, 'recipes/contato.html')
 
-def contact(request):
-    return HttpResponse('contato!')
+def sobre(request):
+    return render(request, 'recipes/sobre.html')
