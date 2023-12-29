@@ -1,12 +1,18 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return HttpResponse('Você está na pagina principal!')
+    # NAME ESPECER = informa a pasta e o arquivo que vai ser lido primeiro
+    return render(request, 'recipes/index.html', context={
+        'name' : 'Emson França'
+    })
+    #
+    # Vai mostrar  a pagina "base_template/global/idex.html" 
+    # return render(request, 'global/index.html', status=404)
 
-def about(request):
-    return HttpResponse('Você está na pagina sobre!')
+def sobre(request):
+    return render(request, 'temp/temp.html')
 
 def contact(request):
-    return HttpResponse('Você está na pagina contato!')
+    return HttpResponse('contato!')
