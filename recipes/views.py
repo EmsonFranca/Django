@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -11,8 +10,3 @@ def home(request):
     # Vai mostrar  a pagina "base_template/global/idex.html" 
     # return render(request, 'global/index.html', status=404)
 
-def contato(request):
-    return render(request, 'recipes/contato.html')
-
-def sobre(request):
-    return render(request, 'recipes/sobre.html')
