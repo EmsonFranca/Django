@@ -149,7 +149,18 @@
     }
     .search-button:focus {
       outline: 2px solid var(--color-primary-dark);
-      background: rgba(0, 0, 0, .4);
+      background: rgba(0, 0, 0, .2);
+      border: none;
     }
+    .main-content {
+      padding-top: 0;
+    }
+    .main-content-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fir, minmax(340px, 1fr));
+      gap: var(--spacing-gutter-large);
+
+    }
+    
   </style>
 </head>
