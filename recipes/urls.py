@@ -1,8 +1,9 @@
 from django.urls import path
-
-from recipes.views import home
+# Importando o modulo 
+from  recipes import views
     
 urlpatterns = [
-    path('', home), # Pagina inicial
+    path('', views.home), # Pagina inicial
+    path('recipes/<id>/', views.recipe),
     
 ]

@@ -9,4 +9,8 @@ def home(request):
     #
     # Vai mostrar  a pagina "base_template/global/idex.html" 
     # return render(request, 'global/index.html', status=404)
-
+def recipe(request, id):
+    # NAME ESPECER = informa a pasta e o arquivo que vai ser lido primeiro
+    return render(request, 'recipes/pages/index.html', context={
+        'name' : 'Emson França'
+    })
