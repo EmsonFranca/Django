@@ -41,10 +41,6 @@ INSTALLED_APPS = [
     'recipes',
 ]
 # Codigo copiado da documentação
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/var/www/static/",
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,7 +121,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' 
+
+# Adicionar novos diretorios estaticos, Exemplo a baixo
+STATICFILES_DIRS = [
+    BASE_DIR / 'base_static/',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
