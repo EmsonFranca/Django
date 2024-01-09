@@ -11,6 +11,6 @@ def home(request):
     # return render(request, 'global/index.html', status=404)
 def recipe(request, id):
     # NAME ESPECER = informa a pasta e o arquivo que vai ser lido primeiro
-    return render(request, 'recipes/pages/index.html', context={
+    return render(request, 'recipes/pages/recipe-views.html', context={
         'name' : 'Emson França'
     })
