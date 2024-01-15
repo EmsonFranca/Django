@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from utils.recipes.factory import make_recipe
 
 # Create your views here.
 def home(request):
     # NAME ESPECER = informa a pasta e o arquivo que vai ser lido primeiro
     return render(request, 'recipes/pages/index.html', context={
-        'name' : 'Emson França'
+        'recipes' : [make_recipe() for _ in range(10)],
     })
     #
     # Vai mostrar  a pagina "base_template/global/idex.html" 
@@ -12,5 +13,5 @@ def home(request):
 def recipe(request, id):
     # NAME ESPECER = informa a pasta e o arquivo que vai ser lido primeiro
     return render(request, 'recipes/pages/recipe-views.html', context={
-        'name' : 'Emson França'
+        'recipe' : make_recipe(),
     })
