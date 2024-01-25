@@ -22,14 +22,19 @@
 
     <span class="recipe-author-item">
       <i class="fas fa-user"></i>
+      {% if recipe.authotr is not None %}
 
-      {% if recipe.author.first_name %}
-        {{ recipe.author.first_name }} {{ recipe.author.last_name }}
+        {% if recipe.author.first_name %}
+          {{ recipe.author.first_name }} {{ recipe.author.last_name }}
+        {% else %}
+          {{ recipe.author.username }}
+        {% endif %}
+
       {% else %}
-        {{ recipe.author.username }}
+        Desconhecido
       {% endif %}
+      </span>
 
-    </span>
     <span class="recipe-author-item">
       <i class="fas fa-user"></i>
       {{ recipe.created_at|date:'d/m/Y' }} às  {{ recipe.created_at|date:'H:i' }}
