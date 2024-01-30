@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import get_object_or_404, render, get_list_or_404
 from utils.recipes.factory import make_recipe
 from .models import Recipe
 
 # Create your views here.
 def home(request):
-    recipes = Recipe.objects.filter(
-        is_published = True
-    ).order_by('-id')
+    recipes =Recipe.objects.filter(
+            is_published = True 
+        ).order_by('-id')
     
     return render(request, 'recipes/pages/index.html', context={
         'recipes' : recipes,
@@ -30,6 +30,14 @@ def recipe(request, id):
         pk = id,
         is_published = True
     ).order_by('-id').first
+    
+    recipe = get_object_or_404(
+        Recipe,
+        pk = id,
+        is_published = True,
+    )
+    
+    
     return render(request, 'recipes/pages/recipe-views.html', context={
         'recipe' : recipe,
         'is_detail_page': True,
